@@ -7,9 +7,10 @@
     .home{
        width: 70%; 
     }
+}
 
     @media(max-width: 760){
         .home{
            width: 80%; 
         }
-}
+    }

@@ -12,4 +12,6 @@ export class CategoriaReadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayedColumns: string[] = ['id', 'nome', 'descricao', 'acoes'];
+
 }
