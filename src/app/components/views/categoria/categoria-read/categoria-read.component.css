@@ -16,4 +16,22 @@
 
 .table{
     width: 100%;
+    padding: 5rem;
 }
+
+.edit{
+    color:blue;
+}
+.delete{
+    color: crimson;
+    margin-left: .5rem;
+}
+
+.mat-header{
+    width: 5rem;
+}
+
+.livros{
+    margin-left: .6rem;
+    color: blue;
+}   
