@@ -15,8 +15,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/views/home/home.component';
-
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 
 
@@ -39,7 +39,8 @@ import { CategoriaReadComponent } from './components/views/categoria/categoria-r
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
 
   ],
   providers: [],
