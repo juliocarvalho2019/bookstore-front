@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { Categoria } from './../categoria.moodel';
+import { CategoriaService } from './../categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaCreateComponent implements OnInit {
 
-  constructor() { }
+  categoria: Categoria = {
+    nome:'',
+    descricao:''
+  }
+
+  constructor(private service: CategoriaService, private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  create():void {
+  this.service.create(this.categoria).subscribe((resposta) => {
+    this.router.navigate(['categorias'])
+    this.service.mensagem('Categoria criada com sucesso!');
+  })
+}
 
 }
