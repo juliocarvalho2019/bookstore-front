@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CategoriaService } from '../categoria.service';
 
 @Component({
   selector: 'app-categoria-delete',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: CategoriaService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  cancel(): void {
+    this.router.navigate(['categorias']);
   }
 
 }
