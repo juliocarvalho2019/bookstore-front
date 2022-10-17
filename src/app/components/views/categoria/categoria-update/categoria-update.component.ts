@@ -1,3 +1,6 @@
+import { Categoria } from './../categoria.moodel';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoriaService } from './../categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaUpdateComponent implements OnInit {
 
-  constructor() { }
+  categoria: Categoria = {
+    id: '',
+    nome: '',
+    descricao: ''
+  }
+  constructor(
+    private service: CategoriaService, 
+    private route: ActivatedRoute, 
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.categoria.id = this.route.snapshot.paramMap.get('id')!
+    this.findById();
+  }
+
+  findById(): void {
+    this.service.findById(this.categoria.id!).subscribe((resposta) => {
+      this.categoria.nome = resposta.nome;
+      this.categoria.descricao = resposta.descricao;
+    })
+  }
+
+  update(): void {
+    this.service.update(this.categoria).subscribe((resposta) => {
+      this.router.navigate(['categorias']);
+      this,this.service.mensagem("Categoria atualizada com sucesso");
+    }, err => {
+      this.service.mensagem('Validar se todos os campos estão preenchidos corretamente.');
+    //this.service.mensagem(err.error.message)
+    })
+  }
+
+  cancel(): void {
+    this.router.navigate(['categorias']);
   }
 
 }
