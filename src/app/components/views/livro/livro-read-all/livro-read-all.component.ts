@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./livro-read-all.component.css']
 })
 export class LivroReadAllComponent implements OnInit {
-
+ 
+  displayedColumns: string[] = ['id', 'titulo', 'livros', 'acoes'];
   constructor() { }
 
   ngOnInit(): void {
