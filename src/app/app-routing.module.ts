@@ -1,4 +1,3 @@
-import { LivroReadComponent } from './components/views/livro/livro-read/livro-read.component';
 import { LivroDeleteComponent } from './components/views/livro/livro-delete/livro-delete.component';
 import { LivroUpdateComponent } from './components/views/livro/livro-update/livro-update.component';
 import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
@@ -10,6 +9,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import { CategoriaReadComponent } from './components/views/categoria/categoria-read/categoria-read.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LivroReadComponent } from './components/views/livro/livro-read/livro-read.component';
 
 const routes: Routes = [
   {
@@ -22,47 +22,36 @@ const routes: Routes = [
   },
   {
     path:'categorias/create',
-
-       component: CategoriaCreateComponent
+    component: CategoriaCreateComponent
   },
   {
     path:'categorias/delete/:id',
-
-       component: CategoriaDeleteComponent
+    component: CategoriaDeleteComponent
   },
   {
     path:'categorias/update/:id',
-
-       component: CategoriaUpdateComponent
+    component: CategoriaUpdateComponent
   },
   {
     path:'categorias/:id_cat/livros',
-
-       component: LivroReadAllComponent
+    component: LivroReadAllComponent
   },
   {
     path:'categorias/:id_cat/livros/create',
-
-       component: LivroCreateComponent
+   component: LivroCreateComponent
   },
   {
     path:'categorias/:id_cat/livros/:id/update',
-
-       component: LivroUpdateComponent
+    component: LivroUpdateComponent
   },
   {
     path:'categorias/:id_cat/livros/:id/delete',
-
-       component: LivroDeleteComponent
+    component: LivroDeleteComponent
   },
   {
     path:'categorias/:id_cat/livros/:id/read',
-
-       component: LivroReadComponent
+    component: LivroReadComponent
   },
-
-
-
 ];
 
 @NgModule({

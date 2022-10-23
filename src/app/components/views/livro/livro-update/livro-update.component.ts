@@ -13,10 +13,10 @@ export class LivroUpdateComponent implements OnInit {
   id_cat: String = ''
 
   livro: Livro = {
-    id:'',
-    titulo:'',
-    nome_autor:'',
-    texto:''
+    id:"",
+    titulo:"",
+    nome_autor:"",
+    texto:"",
   }
 
   titulo = new FormControl("", [Validators.minLength(3)]);
@@ -27,8 +27,8 @@ export class LivroUpdateComponent implements OnInit {
   constructor( private service: LivroService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.id_cat = this.route.snapshot.paramMap.get('id_cat')!
-    this.livro.id = this.route.snapshot.paramMap.get('id')!
+    this.id_cat = this.route.snapshot.paramMap.get("id_cat")!
+    this.livro.id = this.route.snapshot.paramMap.get("id")!
     this.findById();
   }
   cancel(): void {
