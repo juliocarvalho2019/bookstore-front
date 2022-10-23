@@ -1,3 +1,4 @@
+import { LivroReadComponent } from './components/views/livro/livro-read/livro-read.component';
 import { LivroDeleteComponent } from './components/views/livro/livro-delete/livro-delete.component';
 import { LivroUpdateComponent } from './components/views/livro/livro-update/livro-update.component';
 import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
@@ -54,7 +55,11 @@ const routes: Routes = [
 
        component: LivroDeleteComponent
   },
+  {
+    path:'categorias/:id_cat/livros/:id/read',
 
+       component: LivroReadComponent
+  },
 
 
 
