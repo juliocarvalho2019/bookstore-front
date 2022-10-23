@@ -30,6 +30,6 @@ export class LivroReadAllComponent implements OnInit {
   }
 
   navegarParaCriarLivro(): void {
-  this.router.navigate([`categoria/${this.id_cat}/livros/create`])
+  this.router.navigate([`categorias/${this.id_cat}/livros/create`])
 }
 }
