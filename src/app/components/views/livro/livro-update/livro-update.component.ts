@@ -29,6 +29,26 @@ export class LivroUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.id_cat = this.route.snapshot.paramMap.get('id_cat')!
     this.livro.id = this.route.snapshot.paramMap.get('id')!
+    this.findById();
+  }
+  cancel(): void {
+    this.router.navigate([`categorias/${this.id_cat}/livros`]);
+  }
+  
+  findById(): void{
+    this.service.findById(this.livro.id!).subscribe((resposta) => {
+      this.livro = resposta;
+    })
+  }
+
+  update(): void {
+    this.service.update(this.livro).subscribe((resposta) => {
+      this.router.navigate([`categorias/${this.id_cat}/livros`]);
+      this.service.mensagem("Livro atualisado com sucesso!");
+  }, err => {
+    this.router.navigate([`categorias;${this.id_cat}/livros`]);
+    this.service.mensagem("Erro ao atualisar livro, tente mais tarde!");
+  })
   }
 
   create(): void {
@@ -52,10 +72,6 @@ export class LivroUpdateComponent implements OnInit {
       return "O campo TEXTO deve conter entre 10 e 1000000 caracteres";
     }
     return false;
-  }
-
-  cancel(): void {
-    this.router.navigate([`categorias/${this.id_cat}/livros`]);
   }
 
 }
